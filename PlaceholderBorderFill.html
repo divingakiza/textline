@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Placeholder move to textline</title>
+  <style>
+    body {
+      position: relative;
+      background-color: rgb(32, 37, 42);
+      min-height: 94vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Robotto, Arial;
+    }
+
+    .input-name {
+      position: absolute;
+      background-color: transparent;
+      border: 2px solid rgb(199, 110, 47);
+      width: 100%;
+      outline: none;
+      border-radius: 3px;
+      font-size: 14px;
+      font-size: Robotto, Arial;
+      color: rgb(131, 131, 131);
+      padding: 8px 8px 8px 8px;
+    }
+
+    .input-name::placeholder {
+      position: relative;
+      font-size: 14px;
+      font-size: Robotto, Arial;
+      color: rgb(131, 131, 131);
+      opacity: 0;
+      margin-left: 8px;
+    }
+
+    .input-name:placeholder-shown~label {
+      position: relative;
+      font-size: 14px;
+      font-size: Robotto, Arial;
+      text-transform: capitalize;
+      color: rgb(154, 154, 154);
+      padding-left: 8px;
+      top: 10px;
+      transition: 0.9s ease;
+    }
+
+    label {
+      position: relative;
+      font-size: 14px;
+      font-size: Robotto, Arial;
+      text-transform: capitalize;
+      color: rgb(199, 110, 47);
+      top: -10px;
+      margin-left: 8px;
+      background-color: rgb(32, 37, 42);
+      padding: 2px;
+    }
+
+    .input-name:focus~label {
+      position: relative;
+      font-size: 14px;
+      font-size: Robotto, Arial;
+      text-transform: capitalize;
+      color: rgb(199, 110, 47);
+      top: -10px;
+      padding-left: 0px;
+      background-color: rgb(32, 37, 42);
+      margin-left: 8px;
+      padding: 2px;
+      transition: 0.9s ease;
+      border-radius: 90%;
+    }
+
+    .input-name:focus::placeholder {
+      opacity: 1;
+      transition: 0.9s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" placeholder="Enter your username" class="input-name">
+    <label>username</label>
+  </div>
+</body>
+
+</html>

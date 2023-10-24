@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus and fill the line change</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 100vh;
+      font-size: 22px;
+      font-family: Robotto, Arial;
+      text-transform: capitalize;
+      color: rgb(103, 103, 103);
+      font-weight: bold;
+    }
+
+    .field-name {}
+
+    .input-name {
+      border: 0;
+      border-bottom: 2px solid rgb(155, 155, 155);
+      width: 100%;
+      padding-bottom: 8px;
+      font-size: 22px;
+      outline: 0;
+      padding-left: 3px;
+      text-transform: capitalize;
+    }
+
+    .input-name::placeholder {
+      color: rgb(155, 155, 155);
+      font-weight: bold;
+      text-transform: capitalize;
+      color: transparent;
+    }
+
+    .label-name {
+      top: -65px;
+      color: black;
+      font-size: 16px;
+      position: relative;
+      padding-left: 3px;
+    }
+
+    .input-name:placeholder-shown~.label-name {
+      top: -36px;
+      font-size: 22px;
+      color: rgb(155, 155, 155);
+      transition: 0.6s ease;
+      pointer-events: none;
+    }
+
+    /*.input-name:focus {
+      border-image: linear-gradient(to left, green, red);
+      border-image-slice: 1;
+    } */
+
+    .input-name:focus~.label-name {
+      top: -65px;
+      color: black;
+      font-size: 16px;
+      transition: 0.6s ease;
+    }
+
+    .underline {
+      position: absolute;
+      width: 0px;
+      height: 2px;
+      background-color: black;
+      border: none;
+      bottom: 290px;
+      margin-left: 188px;
+      transition: 0.6s ease;
+    }
+
+    .input-name:focus~.underline {
+      position: absolute;
+      background-color: black;
+      width: 376px;
+      height: 2px;
+      transition: 0.6s ease;
+      margin-left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="field-name">
+    <input type="text" class="input-name" placeholder="enter name" autocomplete="off">
+    <label class="label-name">enter name</label>
+    <div class="underline"></div>
+  </div>
+</body>
+
+</html>
